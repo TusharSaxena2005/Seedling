@@ -1,0 +1,86 @@
+# =========================================
+# Java / Spring Boot Project .gitignore
+# =========================================
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### Gradle ###
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+gradle-app.setting
+gradle-app.setting.lockfile
+
+### STS / Eclipse ###
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+tmp/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+classes/
+
+### VS Code ###
+.vscode/
+.history/
+*.code-workspace
+
+### Logs and temp files ###
+logs/
+*.log
+*.tmp
+*.pid
+*.seed
+*.swp
+
+### OS files ###
+.DS_Store
+Thumbs.db
+
+### Test output ###
+test-output/
+surefire-reports/
+jacoco.exec
+*.ec
+*.coverage
+*.lcov
+
+### Environment / Secrets ###
+.env
+*.env
+application-*.yml
+application-*.properties
+
+### Node / Frontend (if using React/Vue/Angular inside project) ###
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Docker ###
+*.tar
+.dockerignore
+docker-compose.override.yml
