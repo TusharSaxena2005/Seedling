@@ -73,6 +73,11 @@ jacoco.exec
 application-*.yml
 application-*.properties
 
+# Spring application properties
+# Ignore the default application.properties and any profile-specific ones
+application.properties
+/seedling/src/main/resources/application.properties
+
 ### Node / Frontend (if using React/Vue/Angular inside project) ###
 node_modules/
 dist/
