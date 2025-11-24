@@ -9,4 +9,6 @@ public interface UserService {
     List<UserDto> getAllUsers();
     
     UserDto getUserById(String id);
+    
+    List<UserDto> getUserByName(String userName);
 }
