@@ -15,7 +15,7 @@ public class UserDto {
     private String id;
     private String userName;
     private String email;
-    private String mobileNumber;
+    private Long mobileNumber;
     private LocalDate dob;
     private String state;
     private String district;

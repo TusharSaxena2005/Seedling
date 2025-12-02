@@ -1,15 +1,13 @@
 package com.seedling.seedling.controllers;
 
+import com.seedling.seedling.dto.CreateUserDto;
 import com.seedling.seedling.dto.UserDto;
 import com.seedling.seedling.services.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -41,8 +39,24 @@ public class UserController {
     }
     
     @PostMapping("/users/createUser")
-    public String createUser() {
-        //UserDto userData = req.body();
-        return "User created successfully";
+    public ResponseEntity<UserDto> createUser(@RequestBody @Valid CreateUserDto createUserDto) {
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(userService.createUser(createUserDto));
+    }
+    
+    @PatchMapping("/{id}")
+    public ResponseEntity<UserDto> updateProductPartially(@PathVariable String id, @RequestBody Map<String, Object> updates) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(userService.updateUser(updates));
+    }
+    
+    @DeleteMapping("/users/deleteUser/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable String id) {
+        userService.deleteUser(id);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("User deleted successfully");
     }
 }
